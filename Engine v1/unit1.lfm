@@ -1,0 +1,165 @@
+object FormMain: TFormMain
+  Left = 680
+  Height = 484
+  Top = 473
+  Width = 675
+  Caption = 'Untitled - RE Macro Editor'
+  ClientHeight = 484
+  ClientWidth = 675
+  Color = clWindow
+  Menu = MainMenu
+  Position = poScreenCenter
+  LCLVersion = '3.4.0.0'
+  object StringGridInputs: TStringGrid
+    Left = 0
+    Height = 484
+    Top = 0
+    Width = 675
+    Anchors = [akTop, akLeft, akRight, akBottom]
+    ColCount = 4
+    Columns = <    
+      item
+        Title.Caption = 'Frame'
+        Width = 80
+      end    
+      item
+        Title.Caption = 'Hold'
+        Width = 80
+      end    
+      item
+        Title.Caption = 'Button'
+        Width = 80
+      end    
+      item
+        Title.Caption = 'First Player'
+        Width = 80
+      end>
+    FixedCols = 0
+    Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goEditing, goSmoothScroll, goRowHighlight]
+    RowCount = 10
+    TabOrder = 1
+  end
+  object StringGridPhysics: TStringGrid
+    Left = 0
+    Height = 484
+    Top = 0
+    Width = 675
+    Anchors = [akTop, akLeft, akRight, akBottom]
+    ColCount = 6
+    Columns = <    
+      item
+        Title.Caption = 'Frame'
+        Width = 80
+      end    
+      item
+        Title.Caption = 'X Position'
+        Width = 80
+      end    
+      item
+        Title.Caption = 'Y Position'
+        Width = 80
+      end    
+      item
+        Title.Caption = 'Rotation'
+        Width = 80
+      end    
+      item
+        Title.Caption = 'Y Accel'
+        Width = 80
+      end    
+      item
+        Title.Caption = 'First Player'
+        Width = 80
+      end>
+    DoubleBuffered = True
+    FixedCols = 0
+    Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goEditing, goSmoothScroll, goRowHighlight]
+    ParentDoubleBuffered = False
+    RangeSelectMode = rsmMulti
+    RowCount = 10
+    TabOrder = 0
+  end
+  object MainMenu: TMainMenu
+    Left = 712
+    Top = 8
+    object MenuItemFIle: TMenuItem
+      Caption = 'File'
+      object MenuItemOpen: TMenuItem
+        Caption = 'Open'
+        OnClick = MenuItemOpenClick
+      end
+      object MenuItemSave: TMenuItem
+        Caption = 'Save'
+        OnClick = MenuItemSaveClick
+      end
+      object Separator1: TMenuItem
+        Caption = '-'
+      end
+      object MenuItemExit: TMenuItem
+        Caption = 'Exit'
+        OnClick = MenuItemExitClick
+      end
+    end
+    object MenuItemEdit: TMenuItem
+      Caption = 'Edit'
+      object MenuItemPhysics: TMenuItem
+        Caption = 'Physics'
+        Checked = True
+        OnClick = MenuItemPhysicsClick
+      end
+      object MenuItemInputs: TMenuItem
+        Caption = 'Inputs'
+        OnClick = MenuItemInputsClick
+      end
+      object Separator2: TMenuItem
+        Caption = '-'
+      end
+      object MenuItemItemAdd: TMenuItem
+        Caption = 'Add Item'
+        ShortCut = 16453
+        OnClick = MenuItemItemAddClick
+      end
+      object MenuItemRemoveItem: TMenuItem
+        Caption = 'Remove Item'
+        ShortCut = 16452
+        OnClick = MenuItemRemoveItemClick
+      end
+      object MenuItemMoveItemUp: TMenuItem
+        Caption = 'Move Item Up'
+        ShortCut = 16471
+        OnClick = MenuItemMoveItemUpClick
+      end
+      object MenuItemMoveItemDown: TMenuItem
+        Caption = 'Move Item Down'
+        ShortCut = 16467
+        OnClick = MenuItemMoveItemDownClick
+      end
+      object Separator3: TMenuItem
+        Caption = '-'
+      end
+      object MenuItemChangeTPS: TMenuItem
+        Caption = 'Change TPS'
+        OnClick = MenuItemChangeTPSClick
+      end
+    end
+    object MenuItemHelp: TMenuItem
+      Caption = 'Help'
+      object MenuItemAbout: TMenuItem
+        Caption = 'About'
+        OnClick = MenuItemAboutClick
+      end
+    end
+  end
+  object OpenDialog: TOpenDialog
+    Title = 'Open Replay'
+    Filter = 'Replay Engine Format|*.re|All Files|*.*'
+    Left = 512
+    Top = 8
+  end
+  object SaveDialog: TSaveDialog
+    Title = 'Save Replay'
+    Filter = 'Replay Engine Format|*.re|All Files|*.*'
+    Left = 584
+    Top = 8
+  end
+end
